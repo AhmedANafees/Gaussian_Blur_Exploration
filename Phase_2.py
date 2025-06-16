@@ -20,7 +20,7 @@ def calculate_new_pixel_value (i_offset, j_offset,weighted_matrix,sample_image,k
     print(i_offset,j_offset)
     print(len(sample_image)-abs(i_offset),len(sample_image[0])-abs(j_offset))
 
-    calc_value_matrix = [[0 for _ in range(len(sample_image)-abs(i_offset))] for _ in range(len(sample_image[0])-abs(j_offset))]
+    calc_value_matrix = [[0 for _ in range(len(sample_image)-abs(j_offset))] for _ in range(len(sample_image[0])-abs(i_offset))]
     print(calc_value_matrix)
     for i in range(len(calc_value_matrix)):
         for j in range(len(calc_value_matrix[i])):
@@ -29,7 +29,7 @@ def calculate_new_pixel_value (i_offset, j_offset,weighted_matrix,sample_image,k
     return 1
 
 new_pixel_matrix = [[0 for _ in range(len(sample_image))] for _ in range(len(sample_image[0]))]
-new_pixel_matrix[0][0] = calculate_new_pixel_value(1,0,weighted_matrix,sample_image,1,0)
+new_pixel_matrix[0][0] = calculate_new_pixel_value(1,0,weighted_matrix,sample_image,0,1)
 """
 for i in range(len(sample_image)):
     for j in range(len(sample_image[i])):
